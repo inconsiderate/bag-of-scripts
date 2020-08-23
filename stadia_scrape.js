@@ -16,7 +16,15 @@ for (var a = 0; a < achievementElements.length; a++) {
 
     achievement['image'] = achievementNode[0].firstChild.style.backgroundImage.slice(4, -1).replace(/["']/g, "");
     achievement['name'] =  achievementNode[1].children[0].children[0].innerText ? achievementNode[1].children[0].children[0].innerText : achievementNode[1].children[0].children[1].innerText;
-    achievement['description'] = achievementNode[1].children[0].children[0].innerText ? achievementNode[1].children[0].children[0].innerText : achievementNode[1].children[0].children[1].innerText;
+
+
+    if (achievementNode[1].children[0].children[1]) {
+        achievement['description'] = achievement['description'] = achievementNode[1].children[0].children[1].innerText 
+    }else if (achievementNode[1].children[0].children[2]) {
+        achievement['description'] = achievementNode[1].children[0].children[2].innerText
+    } else {
+        achievement['description'] = ''
+    }
 
     game['achievements'].push(achievement);
 }
