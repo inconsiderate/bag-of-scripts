@@ -1,6 +1,10 @@
-var game = {
+var achievementElements,
+achievementNode,
+achievement,
+a,
+game = {
     "achievements": [],
-    "title": 'insert_title_here',
+    "title": "Marvel's Avengers",
 };
 
 var achievementElements = document.getElementsByClassName("h6J22d cWe8yc QAAyWd");
